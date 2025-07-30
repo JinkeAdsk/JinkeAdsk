@@ -6,7 +6,3 @@ flowchart LR
         C -- Send+Delay --> E["Queue2"]
     end
     E -- Receive --> F["Handler"]
-
-    B@{ shape: h-cyl}
-    D@{ shape: cyl}
-    E@{ shape: h-cyl}
