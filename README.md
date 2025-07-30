@@ -1,12 +1,12 @@
-- 👋 Hi, I’m @JinkeAdsk
-- 👀 I’m interested in ...
-- 🌱 I’m currently learning ...
-- 💞️ I’m looking to collaborate on ...
-- 📫 How to reach me ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
+flowchart LR
+    A["SNS"] -- Subscription --> B["Queue1"]
+    B --> C("Debounce Handler")
+    subgraph Debouncer
+        C -- dedeupId+TTL --> D["Cache"]
+        C -- Send+Delay --> E["Queue2"]
+    end
+    E -- Receive --> F["Handler"]
 
-<!---
-JinkeAdsk/JinkeAdsk is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-You can click the Preview link to take a look at your changes.
---->
+    B@{ shape: h-cyl}
+    D@{ shape: cyl}
+    E@{ shape: h-cyl}
